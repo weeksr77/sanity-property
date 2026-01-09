@@ -1,6 +1,6 @@
-import gallery from './gallery'
-import floorplan from './floorplan'
-
+// schemas/schema.js
+import teaser from './teaser';
+import amenities from './amenities'
 import gallery from './gallery'
 import floorplan from './floorplan'
 import property from './property'
@@ -9,11 +9,13 @@ import PortfolioPage from './PortfolioPage'
 
 
 export const schemaTypes = [
-  property,
+  teaser,
+  amenities,
   gallery,
   floorplan,
+  property,
   floor,
   PortfolioPage,
-  
-]
 
+  // add more schemas here as you create them
+];
