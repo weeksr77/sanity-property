@@ -6,6 +6,7 @@ import floorplan from './floorplan'
 import property from './property'
 import floor from './floor'
 import PortfolioPage from './PortfolioPage'
+import vacanciesPage from './vacanciesPage';
 
 
 export const schemaTypes = [
@@ -16,6 +17,7 @@ export const schemaTypes = [
   property,
   floor,
   PortfolioPage,
+  vacanciesPage,
 
   // add more schemas here as you create them
 ];

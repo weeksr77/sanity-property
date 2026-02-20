@@ -12,6 +12,13 @@ export default {
     },
 
     {
+  name: 'navTitle',
+  title: 'Navbar Title',
+  type: 'string',
+  description: 'Text shown on the left side of the navbar on desktop',
+},
+
+    {
       name: 'slug',
       title: 'URL Slug',
       type: 'slug',
@@ -60,6 +67,45 @@ export default {
     },
 
     {
+  name: 'amenitiesTitle',
+  title: 'Amenities Title',
+  type: 'string',
+  initialValue: 'Amenities',
+},
+
+{
+  name: 'amenitiesLists',
+  title: 'Amenities Bullet Categories',
+  type: 'array',
+  of: [
+    {
+      type: 'object',
+      name: 'amenitiesList',
+      title: 'Amenities Category',
+      fields: [
+        {
+          name: 'category',
+          title: 'Category Title',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: 'points',
+          title: 'Bullet Points',
+          type: 'array',
+          of: [{ type: 'string' }],
+          validation: (Rule) => Rule.min(1),
+        },
+      ],
+      preview: {
+        select: { title: 'category' },
+      },
+    },
+  ],
+  description: 'Add multiple categories, each with its own bullet list.',
+},
+
+    {
 name: 'amenities',
 title: 'Amenities',
 type: 'array',
@@ -76,11 +122,26 @@ description: 'Images for amenities on this property',
 
    
 
-    {
-      name: 'location',
-      title: 'Location Address',
-      type: 'string'
-    },
+  // property.js (inside fields: [...])
+{
+  name: 'location',
+  title: 'Property Address',
+  type: 'string',
+  description: 'This shows under the map on the Location section/page.',
+  validation: Rule => Rule.required()
+},
+{
+  name: 'mapEmbedUrl',
+  title: 'Google Maps Embed URL (iframe src)',
+  type: 'url',
+  description: 'Paste the full Google Maps embed link (the iframe src value).',
+},
+{
+  name: 'googleMapsUrl',
+  title: 'Google Maps Directions Link (button)',
+  type: 'url',
+  description: 'Paste the share link or directions link you want opened in Google Maps.',
+},
 
     {
       name: 'contactEmail',
@@ -103,6 +164,14 @@ description: 'Images for amenities on this property',
       ]
     }
   ]
+},
+
+{
+  name: "unitGallery",
+  title: "Floor Plans Page Gallery",
+  type: "array",
+  of: [{ type: "image" }],
+  description: "Swipeable photo gallery shown on the Floor Plans page (top/bottom).",
 },
 
 {

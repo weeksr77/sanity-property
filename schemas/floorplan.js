@@ -32,5 +32,14 @@ export default defineType({
       type: 'array',
       of: [{ type: 'string' }],
     },
+
+    {
+  name: "unitPhotos",
+  title: "Unit Photos",
+  type: "array",
+  of: [{ type: "image" }],
+  options: { layout: "grid" }
+},
+
   ],
 })
