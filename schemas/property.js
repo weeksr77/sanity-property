@@ -184,9 +184,65 @@ description: 'Images for amenities on this property',
       to: [{ type: 'floorplan' }]
     }
   ]
-}
+},
 
+{
+  name: "applicantsTitle",
+  title: "Applicants Page Title",
+  type: "string",
+  initialValue: "Apply Online",
+},
+{
+  name: "applicantsInstructions",
+  title: "Applicants Instructions",
+  type: "text",
+  rows: 4,
+  description: "Shown above the AppFolio widget for this specific property.",
+},
 
+// ✅ Sanity: property.js additions
+// Add these fields somewhere in your "property" document fields array.
+// (Place them near your other homepage text fields.)
+
+{
+  name: "floorplansSubtitle",
+  title: "Floor Plans Subtitle (Home Page)",
+  type: "string",
+  initialValue: "Hey — check out our virtual tours!",
+  description: "Appears under the Floor Plans title on the property home page.",
+},
+
+{
+  name: "walkthroughTitle",
+  title: "Walk-through Callout Title (Home Page)",
+  type: "string",
+  initialValue: "Call today to set up a walk-through tour!",
+},
+
+{
+  name: "walkthroughText",
+  title: "Walk-through Callout Text (Home Page)",
+  type: "text",
+  rows: 3,
+  initialValue:
+    "Have questions or want to tour the property? Give us a call and we’ll help you schedule a walk-through.",
+},
+
+{
+  name: "walkthroughButtonText",
+  title: "Walk-through Call Button Text (Home Page)",
+  type: "string",
+  initialValue: "Call Now",
+},
+
+{
+  name: "walkthroughPhone",
+  title: "Walk-through Phone Number (Home Page)",
+  type: "string",
+  initialValue: "(123) 456-7890",
+  description:
+    "Used for the Call button. You can enter formatted text like (123) 456-7890.",
+},
 
 
 
