@@ -41,5 +41,22 @@ export default defineType({
   options: { layout: "grid" }
 },
 
+  {
+  name: "utilitiesIncluded",
+  title: "Utilities Included",
+  type: "text",
+  rows: 2,
+  description: "Example: Water, Trash",
+},
+{
+  name: "tenantResponsibleFor",
+  title: "Tenant Responsible For",
+  type: "text",
+  rows: 2,
+  description: "Example: Electricity, Internet",
+},
+
+
+
   ],
 })
