@@ -30,6 +30,33 @@ export default {
     },
 
     {
+      name: 'seoTitle',
+      title: 'SEO Title',
+      type: 'string',
+      description: 'Search result/browser title for this property. Recommended length: 50-60 characters.',
+      validation: Rule => Rule.max(70).warning('SEO titles are usually best under 60 characters.')
+    },
+
+    {
+      name: 'seoDescription',
+      title: 'SEO Description',
+      type: 'text',
+      rows: 3,
+      description: 'Search result description for this property. Recommended length: 150-160 characters.',
+      validation: Rule => Rule.max(180).warning('SEO descriptions are usually best around 150-160 characters.')
+    },
+
+    {
+      name: 'seoImage',
+      title: 'SEO / Social Share Image',
+      type: 'image',
+      description: 'Image used when this property page is shared on social platforms.',
+      options: {
+        hotspot: true,
+      },
+    },
+
+    {
       name: 'heroText',
       title: 'Hero Text',
       type: 'string'
