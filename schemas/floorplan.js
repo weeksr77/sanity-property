@@ -7,7 +7,7 @@ export default defineType({
   fields: [
     {
       name: 'name',
-      title: 'Floorplan Name',
+      title: 'Floorplan NameZ',
       type: 'string',
     },
     {
