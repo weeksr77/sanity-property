@@ -176,6 +176,13 @@ description: 'Images for amenities on this property',
       type: 'string'
     },
 
+    {
+      name: 'contactPhone',
+      title: 'Contact Phone Number',
+      type: 'string',
+      description: 'Displayed phone number for this property. Example: (540) 667-6300. The website will use this for click-to-call links.',
+    },
+
 
     {
   name: 'floor',
