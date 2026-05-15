@@ -278,6 +278,143 @@ description: 'Images for amenities on this property',
     "Used for the Call button. You can enter formatted text like (123) 456-7890.",
 },
 
+{
+  name: "lifestyleTitle",
+  title: "Lifestyle Section Title",
+  type: "string",
+  initialValue: "Live Near What Matters",
+  description: "Shown on the property home page and the property Lifestyle preview page.",
+},
+
+{
+  name: "lifestyleIntro",
+  title: "Lifestyle Intro",
+  type: "text",
+  rows: 3,
+  description:
+    "Short SEO-friendly intro for nearby employers, schools, shopping, healthcare, attractions, and commuter routes.",
+},
+
+{
+  name: "lifestyleHeroImage",
+  title: "Lifestyle Hero Image",
+  type: "image",
+  options: {
+    hotspot: true,
+  },
+  description: "Large image shown at the top of the Lifestyle / Nearby section.",
+},
+
+{
+  name: "nearbyGroups",
+  title: "Lifestyle Nearby Groups",
+  type: "array",
+  description:
+    "Create groups like Employers, Schools, Healthcare, Shopping, Attractions, or Highways.",
+  of: [
+    {
+      type: "object",
+      name: "nearbyGroup",
+      title: "Nearby Group",
+      fields: [
+        {
+          name: "title",
+          title: "Group Title",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: "description",
+          title: "Group Description",
+          type: "text",
+          rows: 2,
+        },
+        {
+          name: "items",
+          title: "Places",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              name: "nearbyPlace",
+              title: "Nearby Place",
+              fields: [
+                {
+                  name: "name",
+                  title: "Place Name",
+                  type: "string",
+                  validation: (Rule) => Rule.required(),
+                },
+                {
+                  name: "summary",
+                  title: "One Sentence Summary",
+                  type: "text",
+                  rows: 2,
+                },
+                {
+                  name: "travelTime",
+                  title: "Travel Time",
+                  type: "string",
+                  description: "Example: 8 min, 10-15 min, or Varies.",
+                },
+                {
+                  name: "distance",
+                  title: "Distance",
+                  type: "string",
+                  description: "Example: 2.4 miles or Nearby.",
+                },
+                {
+                  name: "note",
+                  title: "Short Label",
+                  type: "string",
+                  description: "Example: Major employer, Healthcare, Shopping, or I-81 access.",
+                },
+                {
+                  name: "websiteUrl",
+                  title: "Website Link",
+                  type: "url",
+                },
+                {
+                  name: "directionsUrl",
+                  title: "Directions Link",
+                  type: "url",
+                  description: "Paste a Google Maps directions or search link.",
+                },
+                {
+                  name: "featured",
+                  title: "Feature This Place",
+                  type: "boolean",
+                  initialValue: false,
+                  description: "Featured places appear in the top highlight row.",
+                },
+              ],
+              preview: {
+                select: {
+                  title: "name",
+                  subtitle: "note",
+                },
+              },
+            },
+          ],
+        },
+      ],
+      preview: {
+        select: {
+          title: "title",
+          places: "items",
+        },
+        prepare({ title, places }) {
+          const count = Array.isArray(places) ? places.length : 0
+          return {
+            title,
+            subtitle: `${count} place${count === 1 ? "" : "s"}`,
+          }
+        },
+      },
+    },
+  ],
+},
+
 
 
   ]
